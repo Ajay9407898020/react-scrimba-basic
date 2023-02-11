@@ -1,112 +1,21 @@
-// ReactDOM.render(<h1>Hello Everyone!</h1>, document.getElementById('root'));
-// Try to write that 1-liner of React code again! This time, see if you can figure out how to render an <ul> with 2+ <li>s indide
+// ReactDOM.render(<h1 className="header">Hello Everyone!</h1>, document.getElementById('root'));
 
-// ReactDOM.render(
-//   <ul>
-//     <li>Ajay</li>
-//     <li>Vijay</li>
-//   </ul>,
-//   document.getElementById('root')
-// )
+/*
+Challenge - recreate the above line of code in vanilla JS by 
+creating and appending an h1 to our div#root (Without using innerHTML)
 
-// Challenge: Create your own custome React component!
-// Call it "MainContent", and have it return a simple
-// h1 element that says "I'm learning React!"
+- Create a new h1 element
+- Give it some text content
+- Give it a class name of "header"
+- append it as a child of div#root
+*/
 
-// Afterword, render it below the Navbar(which
-// you can do inside the ReactDOM.render call below)
+const h1 = document.createElement('h1');
+h1.textContent = "Hello React";
+h1.classList.add('header');
+const element = document.getElementById('root');
+element.append(h1);
+// Above 4 lines of code does the same as one line at the top 
+// Hence It is prooved the React is Declarative
 
-// Navbar component
-function NavBar() {
-  return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
-          Navbar
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled">Disabled</a>
-            </li>
-          </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            ></input>
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-  );
-}
-
-// Custom Component
-function MainContent() {
-  return <h1>I'm learning React!</h1>;
-}
-ReactDOM.render(
-  <div>
-    <NavBar />
-    <MainContent />
-  </div>,
-  document.getElementById("root")
-);
+// Read the Readme file
