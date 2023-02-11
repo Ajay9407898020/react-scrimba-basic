@@ -1,21 +1,21 @@
-// ReactDOM.render(<h1 className="header">Hello Everyone!</h1>, document.getElementById('root'));
-
-/*
-Challenge - recreate the above line of code in vanilla JS by 
-creating and appending an h1 to our div#root (Without using innerHTML)
-
-- Create a new h1 element
-- Give it some text content
-- Give it a class name of "header"
-- append it as a child of div#root
-*/
-
-const h1 = document.createElement('h1');
+const h1 = document.createElement("h1");
 h1.textContent = "Hello React";
-h1.classList.add('header');
-const element = document.getElementById('root');
-element.append(h1);
-// Above 4 lines of code does the same as one line at the top 
-// Hence It is prooved the React is Declarative
+h1.classList.add("header");
+console.log(h1);   //JS Element
+//<h1 class="header">Hello React</h1>
 
-// Read the Readme file
+const element = <h1 className="header">This is JSX</h1>;
+console.log(element); //JSX element
+/*
+{
+    "type": "h1",
+    "key": null,
+    "ref": null,
+    "props": {"className": "header","children": "This is JSX"},
+    "_owner": null,
+    "_store": {}
+}
+*/
+// JSX
+ReactDOM.render(element, document.getElementById("root"));
+// Always Remember and return one element from jsx 
